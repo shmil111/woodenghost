@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  woodenghost:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONPATH=/app
+      - ENV=development
+    restart: unless-stopped 
