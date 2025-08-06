@@ -1,0 +1,178 @@
+Git Workflow Guide for Wooden Ghost Temporal Optimization
+
+Resolving Common Git Issues and Establishing Proper Workflow
+
+SETTING DEFAULT FOLDER FOR NEW PROJECTS
+
+Create a dedicated workspace directory
+Open terminal in your desired location
+Run: mkdir woodenghost_workspace
+Navigate: cd woodenghost_workspace
+Set this as your default workspace in your editor
+
+LINKING EXISTING LOCAL FOLDER TO GITHUB REPOSITORY
+
+Navigate to your existing project folder
+Initialize git if not already done: git init
+Add remote repository: git remote add origin https://github.com/username/repository.git
+Check current status: git status
+Add all files: git add .
+Commit changes: git commit -m "initial commit"
+Push to repository: git push -u origin main
+
+FIXING CLONE FAILURES DUE TO NON EMPTY FOLDERS
+
+Option A: Clone into new folder
+git clone https://github.com/username/repository.git new_folder_name
+
+Option B: Clone into existing empty folder
+Remove all contents from target folder first
+Then run: git clone https://github.com/username/repository.git .
+
+Option C: Initialize existing folder with content
+git init
+git remote add origin https://github.com/username/repository.git
+git fetch
+git reset --hard origin/main
+
+CORRECTING GIT COMMIT SYNTAX ERRORS
+
+Current incorrect commands in your todo.txt:
+Commit: git commit am "message"
+
+Correct syntax should be:
+Commit: git commit -am "message"
+
+The hyphen before 'am' is essential
+
+Other syntax corrections needed:
+Create branch: git checkout -b feature/name (not git checkout b)
+Create tag: git tag -a v1.0.0 -m "message" (not git tag a vonepointzero m)
+Delete tag: git tag -d tagname (not git tag d)
+
+PROPER GIT ADD AND COMMIT WORKFLOW SEQUENCE
+
+Always follow this exact order:
+
+Step One: Check what files changed
+git status
+
+Step Two: Add files to staging area
+git add .
+(This stages all changes)
+
+Or add specific files:
+git add filename.txt
+
+Step Three: Commit staged changes
+git commit -m "descriptive message about changes"
+
+Step Four: Push to remote repository
+git push origin main
+
+Never skip the git add step before commit
+Files must be staged before they can be committed
+
+UNDERSTANDING LINE ENDINGS WARNINGS
+
+When you run git add . you may see warnings like:
+"warning: LF will be replaced by CRLF"
+
+This is normal behavior on Windows
+Git is converting line endings for cross platform compatibility
+The command is working correctly
+Wait for it to complete even if it seems slow
+
+These warnings indicate:
+LF = Line Feed (Unix/Linux line ending)
+CRLF = Carriage Return + Line Feed (Windows line ending)
+Git automatically handles conversion between systems
+
+COMPLETE CORRECTED WORKFLOW COMMANDS
+
+Daily workflow sequence:
+git status (check current state)
+git add . (stage all changes)
+git commit -m "description of changes" (save changes)
+git push origin main (upload to GitHub)
+
+Branch management:
+git branch (list all branches)
+git checkout -b feature/newfeature (create and switch to new branch)
+git checkout main (switch back to main branch)
+git merge feature/newfeature (merge branch into current branch)
+
+Repository synchronization:
+git fetch (download updates without merging)
+git pull origin main (download and merge updates)
+git push origin main (upload your changes)
+
+Emergency commands:
+git reset --soft HEAD~1 (undo last commit but keep changes)
+git reset --hard HEAD~1 (undo last commit and discard changes)
+git stash (temporarily save uncommitted changes)
+git stash pop (restore stashed changes)
+
+SETTING UP YOUR WORKSPACE PROPERLY
+
+Create this folder structure:
+woodenghost_workspace/
+  projects/
+    active/
+    archived/
+    experiments/
+  repositories/
+    personal/
+    collaborations/
+    forks/
+
+Configure git globally:
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+git config --global init.defaultBranch main
+git config --global core.autocrlf true
+
+TROUBLESHOOTING COMMON SCENARIOS
+
+Scenario: Git clone says "destination path already exists"
+Solution: Either delete the folder or clone with different name
+git clone https://github.com/user/repo.git different_name
+
+Scenario: Git add seems stuck or slow
+Solution: Wait patiently especially with many files
+Large repositories take time to process
+Check progress with git status in another terminal
+
+Scenario: Commit fails with "nothing to commit"
+Solution: Run git add . first to stage your changes
+Then run git commit -m "message"
+
+Scenario: Push fails with "updates were rejected"
+Solution: Pull updates first then push
+git pull origin main
+git push origin main
+
+Scenario: Accidentally committed wrong files
+Solution: Reset the commit but keep changes
+git reset --soft HEAD~1
+Then add only the files you want and commit again
+
+BEST PRACTICES FOR TEMPORAL OPTIMIZATION PROJECTS
+
+Commit frequently with descriptive messages
+Use branches for experimental features
+Keep main branch stable and working
+Test changes before pushing to main
+Use meaningful branch names like "feature/audio_sync" or "experiment/quantum_coherence"
+Tag important milestones with versions
+Write clear commit messages describing what changed and why
+
+Always check git status before and after operations
+Never force push unless absolutely necessary
+Keep repositories organized in logical folder structure
+Regular backups of important work
+Document your workflow for consistency
+
+This guide addresses all the common Git workflow issues
+Follow these patterns for reliable version control
+Temporal optimization projects require careful version management

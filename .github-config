@@ -1,0 +1,50 @@
+ב Wooden.Ghost GitHub Configuration
+# Author: Nevo Mizrahi (Wooden.Ghost)
+# Purpose: Store persistent settings for GitHub workflow
+[paths]
+repositories_root=repositories
+default_branch=main
+workspace_root=.
+[git]
+default_editor=code –wait
+autocrlf=true
+pull_rebase=false
+init_defaultbranch=main
+[workflow]
+predebug_enabled=true
+auto_cleanup=true
+largefilethreshold=100MB
+log_level=INFO
+[templates]
+readmetemplate=woodenghost
+gitignore_global=true
+directorystructure=temporaloptimization
+[temporal_optimization]
+# Core directories for Temporal.Optimization projects
+core_dirs=src,docs,tests,assets,temporal-optimization
+research_dirs=algorithms,analysis,visualization,synchronization
+art_dirs=visual,audio,interactive,generative
+[predebugging_checks]
+git_availability=true
+github_cli=true
+large_files=true
+nested_git=true
+disk_space=true
+line_endings=true
+[automation]
+auto_fetch=true
+auto_gc=true
+cleanuptempfiles=true
+updateallrepos=false
+[collaboration]
+# Settings for collaborative Temporal.Optimization research
+default_license=MIT
+codeofconduct=true
+contributing_guide=true
+issue_templates=true
+[artistic_integration]
+# Settings for integrating artistic elements
+supportaudiofiles=true
+supportvisualassets=true
+supportinteractivedemos=true
+readmeaestheticformatting=true

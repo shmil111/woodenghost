@@ -1,4 +1,6 @@
-# Python
+ב Wooden Ghost Optimized Gitignore
+
+# Python artifacts
 __pycache__/
 *.py[cod]
 *$py.class
@@ -26,14 +28,15 @@ env/
 ENV/
 .venv/
 
-# IDE
-.vscode/
+# IDE files
+.vscode/settings.json
+.vscode/launch.json
 .idea/
 *.swp
 *.swo
 *~
 
-# OS
+# OS generated files
 .DS_Store
 .DS_Store?
 ._*
@@ -42,14 +45,65 @@ ENV/
 ehthumbs.db
 Thumbs.db
 
-# Logs
+# Logs and temporary files
 *.log
 logs/
+*.tmp
+*.temp
 
 # Environment variables
 .env
 .env.local
 
-# Docker (optional - keep docker files in git)
-# Dockerfile
-# docker-compose.yml 
+# Large media files (use Git LFS if needed)
+*.wav
+*.mp3
+*.flac
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.wmv
+*.m4a
+
+# Large image files
+*.psd
+*.ai
+*.eps
+*.tiff
+*.raw
+
+# Build and cache directories
+node_modules/
+.npm/
+.cache/
+.gradle/
+target/
+out/
+
+# External repositories (managed separately)
+/repositories/
+
+# Documentation builds
+/DOCS/
+
+# Editor specific
+.cursor/
+.vscode/workspace.json
+
+# Docker build artifacts
+*.dockerignore.bak
+
+# Temporary Wooden Ghost files
+*.wg.tmp
+temporal_cache/
+sync_cache/
+
+# Backup files
+*.bak
+*.backup
+*.orig
+
+# Large art/media directories (managed separately)
+Wooden.Ghost/
+mygists/
